@@ -1,8 +1,24 @@
 # Configuration file for BIGCLAM Breast Cancer Subtype Clustering
 
-# Data paths
+# Data preparation (prepare raw datasets for pipeline)
+data_preparation:
+  # TCGA BRCA dataset paths
+  tcga:
+    clinical_file: "data/brca_tcga_clinical_data.tsv"
+    expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
+    output_file: "data/tcga_brca_data_target_added.csv"
+    pam50_column: null  # Auto-detect if null, or specify column name
+  
+  # GSE96058 dataset paths
+  gse96058:
+    expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
+    clinical_file: null  # Optional: path to clinical/metadata file if available
+    output_file: "data/gse96058_data_target_added.csv"
+    pam50_column: null  # Auto-detect if null, or specify column name
+
+# Data paths (for main pipeline)
 data:
-  input_file: "data/gene_expression_data_target_added.csv"
+  input_file: "data/gene_expression_data_target_added.csv"  # Can be tcga_brca_data_target_added.csv or gse96058_data_target_added.csv
   output_file: "data/reduced_data_BC_label.csv"
   save_path: "data/BIGCLAM_data/"
   

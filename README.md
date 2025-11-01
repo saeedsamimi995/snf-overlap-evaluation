@@ -78,6 +78,7 @@ pip install -r requirements.txt
 │   ├── evaluation/          # Evaluation and visualization tools
 │   ├── preprocessing/       # Data loading and preprocessing
 │   └── utils/               # Utility functions
+│       └── prepare_datasets.py  # Data preparation for TCGA/GSE96058
 ├── docs/                     # Documentation
 │   └── METHODOLOGY.md       # Detailed methodology documentation
 ├── models/                   # Saved model files (created during training)
@@ -91,24 +92,63 @@ pip install -r requirements.txt
 
 ### Quick Start
 
-1. **Prepare your data**:
-   - Place your gene expression data CSV file in the `data/` directory
-   - Update the `input_file` path in `config/config.yaml`
-   - The CSV should have samples as columns and genes as rows, with a target column (e.g., PAM50)
+#### Step 1: Prepare Your Datasets
 
-2. **Run the complete pipeline**:
+Before running the main pipeline, prepare your raw datasets (TCGA BRCA or GSE96058):
+
+**Option A: Using the data preparation script**
+```bash
+# Prepare both TCGA BRCA and GSE96058 datasets
+python -m src.utils.prepare_datasets --dataset both --config config/config.yaml
+
+# Or prepare individually:
+python -m src.utils.prepare_datasets --dataset tcga --config config/config.yaml
+python -m src.utils.prepare_datasets --dataset gse96058 --config config/config.yaml
+```
+
+**Option B: Manual preparation**
+- Place your gene expression data CSV file in the `data/` directory
+- Update the `input_file` path in `config/config.yaml`
+- The CSV should have samples as columns and genes as rows, with a target column (e.g., PAM50)
+
+The data preparation script will:
+- Load raw gene expression data (TCGA CCT format or GSE96058 CSV)
+- Match samples with clinical data (if available)
+- Extract PAM50 labels
+- Output formatted CSV: **Samples as columns, Genes as rows, PAM50 as last row**
+
+**Output files:**
+- `data/tcga_brca_data_target_added.csv` - TCGA BRCA dataset
+- `data/gse96058_data_target_added.csv` - GSE96058 dataset
+
+#### Step 2: Run the Complete Pipeline
+
+After preparing your data, run the main BIGCLAM pipeline:
+
 ```bash
 python main.py --config config/config.yaml
 ```
+
+Make sure to update `data.input_file` in `config/config.yaml` to point to your prepared dataset.
 
 ### Configuration
 
 Edit `config/config.yaml` to adjust parameters:
 
 ```yaml
-# Data paths
+# Data preparation (prepare raw datasets)
+data_preparation:
+  tcga:
+    clinical_file: "data/brca_tcga_clinical_data.tsv"
+    expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
+    output_file: "data/tcga_brca_data_target_added.csv"
+  gse96058:
+    expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
+    output_file: "data/gse96058_data_target_added.csv"
+
+# Data paths (for main pipeline)
 data:
-  input_file: "data/gene_expression_data_target_added.csv"
+  input_file: "data/gene_expression_data_target_added.csv"  # Use prepared dataset
   output_file: "data/reduced_data_BC_label.csv"
 
 # Preprocessing
@@ -187,11 +227,29 @@ See `docs/METHODOLOGY.md` for detailed methodological documentation addressing r
 
 The project uses YAML configuration files for easy parameter management. Key configuration sections:
 
-- **Data**: File paths and data settings
+- **Data Preparation**: Input/output paths for TCGA BRCA and GSE96058 datasets
+- **Data**: File paths for the main pipeline (uses prepared datasets)
 - **Preprocessing**: Feature selection and graph construction parameters
 - **BIGCLAM**: Model training hyperparameters
 - **Classifiers**: MLP and SVM training parameters
 - **Output**: Directories for saving results and models
+
+### Data Preparation Configuration
+
+The `data_preparation` section in `config/config.yaml` specifies paths for preparing raw datasets:
+
+```yaml
+data_preparation:
+  tcga:
+    clinical_file: "data/brca_tcga_clinical_data.tsv"
+    expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
+    output_file: "data/tcga_brca_data_target_added.csv"
+  gse96058:
+    expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
+    output_file: "data/gse96058_data_target_added.csv"
+```
+
+These paths are automatically used when running the data preparation script with `--config` flag.
 
 ## Output
 

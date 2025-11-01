@@ -3,7 +3,7 @@ Data Preparation Script
 
 Prepares TCGA BRCA and GSE96058 datasets:
 - Combines gene expression data with PAM50 labels
-- Output format: Samples as columns, Genes as rows, PAM50 as last column
+- Output format: Samples as columns, Genes as rows, PAM50 as last row
 """
 
 import pandas as pd
@@ -221,56 +221,91 @@ def prepare_gse96058_data(expression_file, output_file, clinical_file=None):
 
 if __name__ == "__main__":
     import argparse
+    try:
+        import yaml
+        YAML_AVAILABLE = True
+    except ImportError:
+        YAML_AVAILABLE = False
+        print("[WARNING] PyYAML not installed. Config file support disabled.")
+        print("          Install with: pip install pyyaml")
     
     parser = argparse.ArgumentParser(
         description='Prepare TCGA BRCA and GSE96058 datasets for BIGCLAM pipeline'
     )
-    parser.add_argument('--tcga_clinical', 
-                       default='data/brca_tcga_clinical_data.tsv',
-                       help='TCGA clinical data file')
-    parser.add_argument('--tcga_expression',
-                       default='data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct',
-                       help='TCGA expression data file')
-    parser.add_argument('--tcga_output',
-                       default='data/tcga_brca_data_target_added.csv',
-                       help='Output file for TCGA data')
-    parser.add_argument('--gse96058_expression',
-                       default='data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv',
-                       help='GSE96058 expression data file')
-    parser.add_argument('--gse96058_clinical',
-                       default=None,
-                       help='GSE96058 clinical data file (optional)')
-    parser.add_argument('--gse96058_output',
-                       default='data/gse96058_data_target_added.csv',
-                       help='Output file for GSE96058 data')
+    parser.add_argument('--config', type=str, default=None,
+                       help='Path to config.yaml file (optional)')
+    parser.add_argument('--tcga_clinical', type=str, default=None,
+                       help='TCGA clinical data file (overrides config)')
+    parser.add_argument('--tcga_expression', type=str, default=None,
+                       help='TCGA expression data file (overrides config)')
+    parser.add_argument('--tcga_output', type=str, default=None,
+                       help='Output file for TCGA data (overrides config)')
+    parser.add_argument('--gse96058_expression', type=str, default=None,
+                       help='GSE96058 expression data file (overrides config)')
+    parser.add_argument('--gse96058_clinical', type=str, default=None,
+                       help='GSE96058 clinical data file (overrides config)')
+    parser.add_argument('--gse96058_output', type=str, default=None,
+                       help='Output file for GSE96058 data (overrides config)')
     parser.add_argument('--dataset', choices=['tcga', 'gse96058', 'both'],
                        default='both',
                        help='Which dataset(s) to process')
     
     args = parser.parse_args()
     
+    # Load config if provided
+    config = None
+    if args.config and Path(args.config).exists():
+        if not YAML_AVAILABLE:
+            print(f"[WARNING] Config file specified but PyYAML not available.")
+            print(f"          Install PyYAML to use config file: pip install pyyaml")
+        else:
+            with open(args.config, 'r') as f:
+                config = yaml.safe_load(f)
+                print(f"Loaded configuration from: {args.config}")
+    
+    # Get paths from config or args (args take precedence)
+    if config and 'data_preparation' in config:
+        prep_config = config['data_preparation']
+        
+        tcga_clinical = args.tcga_clinical or prep_config.get('tcga', {}).get('clinical_file', 'data/brca_tcga_clinical_data.tsv')
+        tcga_expression = args.tcga_expression or prep_config.get('tcga', {}).get('expression_file', 'data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct')
+        tcga_output = args.tcga_output or prep_config.get('tcga', {}).get('output_file', 'data/tcga_brca_data_target_added.csv')
+        
+        gse96058_expression = args.gse96058_expression or prep_config.get('gse96058', {}).get('expression_file', 'data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv')
+        gse96058_clinical = args.gse96058_clinical or prep_config.get('gse96058', {}).get('clinical_file')
+        gse96058_output = args.gse96058_output or prep_config.get('gse96058', {}).get('output_file', 'data/gse96058_data_target_added.csv')
+    else:
+        # Use defaults or command line args
+        tcga_clinical = args.tcga_clinical or 'data/brca_tcga_clinical_data.tsv'
+        tcga_expression = args.tcga_expression or 'data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct'
+        tcga_output = args.tcga_output or 'data/tcga_brca_data_target_added.csv'
+        gse96058_expression = args.gse96058_expression or 'data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv'
+        gse96058_clinical = args.gse96058_clinical
+        gse96058_output = args.gse96058_output or 'data/gse96058_data_target_added.csv'
+    
+    # Process datasets
     if args.dataset in ['tcga', 'both']:
-        if Path(args.tcga_clinical).exists() and Path(args.tcga_expression).exists():
+        if Path(tcga_clinical).exists() and Path(tcga_expression).exists():
             prepare_tcga_brca_data(
-                args.tcga_clinical,
-                args.tcga_expression,
-                args.tcga_output
+                tcga_clinical,
+                tcga_expression,
+                tcga_output
             )
         else:
-            print(f"⚠ TCGA files not found. Skipping TCGA processing.")
-            print(f"   Clinical: {args.tcga_clinical}")
-            print(f"   Expression: {args.tcga_expression}")
+            print("[WARNING] TCGA files not found. Skipping TCGA processing.")
+            print(f"   Clinical: {tcga_clinical}")
+            print(f"   Expression: {tcga_expression}")
     
     if args.dataset in ['gse96058', 'both']:
-        if Path(args.gse96058_expression).exists():
+        if Path(gse96058_expression).exists():
             prepare_gse96058_data(
-                args.gse96058_expression,
-                args.gse96058_output,
-                args.gse96058_clinical
+                gse96058_expression,
+                gse96058_output,
+                gse96058_clinical
             )
         else:
-            print(f"⚠ GSE96058 expression file not found. Skipping.")
-            print(f"   Expression: {args.gse96058_expression}")
+            print("[WARNING] GSE96058 expression file not found. Skipping.")
+            print(f"   Expression: {gse96058_expression}")
     
     print("\n" + "=" * 80)
     print("DATA PREPARATION COMPLETE")
