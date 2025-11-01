@@ -1,0 +1,56 @@
+# Configuration file for BIGCLAM Breast Cancer Subtype Clustering
+
+# Data paths
+data:
+  input_file: "data/gene_expression_data_target_added.csv"
+  output_file: "data/reduced_data_BC_label.csv"
+  save_path: "data/BIGCLAM_data/"
+  
+# Preprocessing parameters
+preprocessing:
+  variance_threshold: 13
+  similarity_threshold: 0.4
+  
+# BIGCLAM parameters
+bigclam:
+  max_communities: 10
+  iterations: 100
+  learning_rate: 0.08
+  num_communities: 4  # Final number of communities to use
+  
+# Classifier parameters
+classifiers:
+  mlp:
+    num_runs: 10
+    num_epochs: 200
+    learning_rate: 0.001
+    patience: 10
+    weight_decay: 0.0001
+    dropout_rate: 0.3
+    hidden_layers: [80, 50, 20]
+  
+  svm:
+    num_runs: 10
+    kernel: "rbf"
+    C: 0.1
+    gamma: "scale"
+    probability: true
+    
+# Data splitting parameters
+data_splitting:
+  test_size: 0.2
+  valid_size: 0.2
+  train_size: 0.6
+  random_state: 42
+  
+# Augmentation parameters
+augmentation:
+  noise_mean: 0.0
+  noise_std: 0.1
+  
+# Output paths
+output:
+  results_dir: "results/"
+  models_dir: "models/"
+  visualizations_dir: "results/"
+
