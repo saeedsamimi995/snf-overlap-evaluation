@@ -37,10 +37,14 @@ ENV/
 *.swo
 *~
 
-# Data files (uncomment if you don't want to track data)
-# data/*.csv
-# data/*.npy
-# data/*.pkl
+# Data files
+data/*.csv
+data/*.tsv
+data/*.cct
+data/*.npy
+data/*.pkl
+# But keep the reduced_data_BC_label.csv as it's a generated result
+!data/reduced_data_BC_label.csv
 
 # Model files
 models/*.pth

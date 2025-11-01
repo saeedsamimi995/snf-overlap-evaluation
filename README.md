@@ -283,7 +283,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgements
 
 - Special thanks to Dr. Mohammad Teshnehlab and Dr. Saeed Pirmoradi for their guidance and support
-- Dataset: [GSE96058](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96058)
+- Datasets:
+  - [GSE96058](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96058) - Breast cancer gene expression dataset
+  - [TCGA-BRCA](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) - The Cancer Genome Atlas Breast Invasive Carcinoma dataset
 - BIGCLAM methodology based on Leskovec et al. (2013)
 
 ## Contributing
