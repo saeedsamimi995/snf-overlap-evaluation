@@ -72,11 +72,14 @@ pip install -r requirements.txt
 ├── notebooks/                # Jupyter notebooks for exploratory analysis
 │   └── bigclam_training_v4_0.ipynb
 ├── src/                      # Source code modules
+│   ├── analysis/            # Reviewer-addressed analysis scripts
 │   ├── bigclam/             # BIGCLAM model implementation
 │   ├── classifiers/         # MLP and SVM classifiers
 │   ├── evaluation/          # Evaluation and visualization tools
 │   ├── preprocessing/       # Data loading and preprocessing
 │   └── utils/               # Utility functions
+├── docs/                     # Documentation
+│   └── METHODOLOGY.md       # Detailed methodology documentation
 ├── models/                   # Saved model files (created during training)
 ├── results/                  # Output visualizations and results
 ├── main.py                   # Main pipeline script
@@ -147,6 +150,38 @@ X_reduced, _, _ = apply_variance_threshold(X, data, threshold=13)
 # Train BIGCLAM
 F, num_communities = train_bigclam(A, max_communities=10)
 ```
+
+### Analysis Scripts for Reviewer Concerns
+
+The repository includes specialized analysis scripts to address reviewer concerns:
+
+1. **Baseline Comparison**: Compare classifiers on original vs BIGCLAM-filtered data
+   ```bash
+   python -m src.analysis.baseline_comparison \
+     --original_data data/gene_expression_data_target_added.csv \
+     --bigclam_data data/reduced_data_BC_label.csv
+   ```
+
+2. **Computational Benchmarking**: Measure pipeline performance and efficiency
+   ```bash
+   python -m src.analysis.benchmark \
+     --data data/gene_expression_data_target_added.csv
+   ```
+
+3. **Parameter Sensitivity Analysis**: Justify threshold selections
+   ```bash
+   python -m src.analysis.parameter_sensitivity \
+     --data data/gene_expression_data_target_added.csv --all
+   ```
+
+4. **Run All Analyses**: Execute all reviewer-addressed analyses
+   ```bash
+   python run_all_analyses.py \
+     --original_data data/gene_expression_data_target_added.csv \
+     --bigclam_data data/reduced_data_BC_label.csv
+   ```
+
+See `docs/METHODOLOGY.md` for detailed methodological documentation addressing reviewer concerns.
 
 ## Configuration
 
