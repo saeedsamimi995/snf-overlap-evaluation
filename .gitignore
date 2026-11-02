@@ -51,11 +51,8 @@ data/tcga/
 data/gse25066/*.gz
 results/q1_smoke/
 
-# Model files
-models/*.pth
-models/*.joblib
-models/*.h5
-models/*.pt
+# Local model dumps and empty models/ folder
+models/
 
 # Generated plots. The manuscript copies in manuscript/paper_figures stay tracked.
 # Result tables (csv, json, md) stay tracked.
@@ -65,7 +62,7 @@ results/**/*.png
 results/*.svg
 results/*.pdf
 
-# Exploratory notebook. Not part of the locked study.
+# Exploratory notebooks are not part of the locked study.
 notebooks/
 
 # Cached graphs and membership matrices. Study scripts rewrite these.

@@ -63,6 +63,6 @@ The fair expression-only comparisons are the methods subtype papers actually rep
 
 The repository tracks `manuscript/manuscript.tex`, `manuscript/manuscript.docx`, `manuscript/paper_figures/includegraphics/`, and `manuscript/tables/`. The local builders that redraw figures and write the Word file are not in the repository.
 
-## Legacy path
+## Hard-partition discovery
 
-`main.py` and `python run_q1_study.py --config config/config.yaml` belong to the earlier cosine-graph BIGCLAM plus MLP/SVM pipeline. An absolute variance cutoff of 13 is not the locked gene rule. Classifier accuracy repredicts labels built from the same expression profiles and is not used in the manuscript.
+`python run_q1_study.py` rebuilds the locked hard SNF partitions and the literature hard baselines on the harmonized cohorts. Soft engines are run separately with `run_snf_overlap_sota.py`. An absolute variance cutoff of 13 is not the locked gene rule; the locked list is the top 2,000 variance genes on discovery.

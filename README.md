@@ -28,16 +28,15 @@ The GSE25066 command does not retune K, k, mixed ratios, or the gene list. Its p
 
 The tracked manuscript is `manuscript/manuscript.tex`, `manuscript/manuscript.docx`, the figure files, and `manuscript/tables/`. The Python builders that redraw figures and regenerate the Word file stay on this machine and are not in the repository.
 
-`main.py` still trains an MLP and an SVM on hard BIGCLAM labels. That accuracy is not a study result.
-
 ## Layout
 
 ```
-config/config.yaml                 locked and legacy settings
+config/config.yaml                 locked settings
 src/analysis/                      SNF, soft engines, ceiling, GSE25066
 src/preprocessing/                 cohort harmonization
+src/bigclam/                       classical BIGCLAM baseline
 scripts/                           ranking and ceiling driver
-manuscript/                        tex, docx builder, figures, tables
+manuscript/                        tex, Word file, figures, tables
 manuscript/SUPPLEMENTARY_METHODS.md
 results/ceiling/                   density, ablation, simulation, decision note
 results/gse25066/                  pCR tests and gene-overlap sensitivity
