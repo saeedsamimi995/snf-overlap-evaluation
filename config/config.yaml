@@ -1,23 +1,6 @@
-# Configuration file for BIGCLAM Breast Cancer Subtype Clustering
+# Locked study configuration. Paths are relative to the repository root.
+# Do not retune q1 discovery settings on TCGA, METABRIC, or GSE25066.
 
-# Data preparation (prepare raw datasets for pipeline)
-data_preparation:
-  # TCGA BRCA dataset paths
-  tcga:
-    clinical_file: "data/brca_tcga_clinical_data.tsv"
-    expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
-    output_file: "data/prepared/tcga_clinical.csv"
-    pam50_file: "data/tcga/brca_pancan_clinical_patient.txt"
-    pam50_column: "SUBTYPE"
-  
-  # GSE96058 dataset paths
-  gse96058:
-    expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
-    clinical_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/GSE96058_clinical_data.csv"
-    output_file: "data/prepared/gse96058_clinical.csv"
-    pam50_column: "PAM50"
-
-# Locked three-cohort study. Discovery settings are not retuned on METABRIC.
 q1:
   discovery_cohort: gse96058
   n_genes: 2000
@@ -41,7 +24,7 @@ q1:
   harmonized_dir: data/harmonized
   gse96058:
     expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
-    clinical_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/GSE96058_clinical_data.csv"
+    clinical_file: "data/gse96058_clinical.csv"
     clinical_output: "data/prepared/gse96058_clinical.csv"
     os_time_unit: days
   tcga:
@@ -51,63 +34,9 @@ q1:
     clinical_output: "data/prepared/tcga_clinical.csv"
     os_time_unit: months
   metabric:
-    expression_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_mrna_illumina_microarray.txt"
-    patient_clinical: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_clinical_patient.txt"
-    sample_clinical: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_clinical_sample.txt"
+    expression_file: "data/metabric/data_mrna_illumina_microarray.txt"
+    patient_clinical: "data/metabric/data_clinical_patient.txt"
+    sample_clinical: "data/metabric/data_clinical_sample.txt"
     output_dir: "data/metabric"
     os_time_unit: months
-
-# Data paths (for main pipeline)
-data:
-  input_file: "data/gene_expression_data_target_added.csv"  # Can be tcga_brca_data_target_added.csv or gse96058_data_target_added.csv
-  output_file: "data/reduced_data_BC_label.csv"
-  save_path: "data/BIGCLAM_data/"
-  
-# Preprocessing parameters
-preprocessing:
-  variance_threshold: 13
-  similarity_threshold: 0.4
-  
-# BIGCLAM parameters
-bigclam:
-  max_communities: 10
-  iterations: 100
-  learning_rate: 0.08
-  num_communities: 4  # Final number of communities to use
-  
-# Classifier parameters
-classifiers:
-  mlp:
-    num_runs: 10
-    num_epochs: 200
-    learning_rate: 0.001
-    patience: 10
-    weight_decay: 0.0001
-    dropout_rate: 0.3
-    hidden_layers: [80, 50, 20]
-  
-  svm:
-    num_runs: 10
-    kernel: "rbf"
-    C: 0.1
-    gamma: "scale"
-    probability: true
-    
-# Data splitting parameters
-data_splitting:
-  test_size: 0.2
-  valid_size: 0.2
-  train_size: 0.6
-  random_state: 42
-  
-# Augmentation parameters
-augmentation:
-  noise_mean: 0.0
-  noise_std: 0.1
-  
-# Output paths
-output:
-  results_dir: "results/"
-  models_dir: "models/"
-  visualizations_dir: "results/"
 
