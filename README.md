@@ -26,13 +26,7 @@ python -m src.analysis.gse25066_response
 
 The GSE25066 command does not retune K, k, mixed ratios, or the gene list. Its pre-stated tests are null, so there is no treatment-resistance claim.
 
-Rebuild the Word manuscript after figure or table edits:
-
-```bash
-python manuscript/revise_figures_and_tables.py
-python manuscript/export_figures.py
-python manuscript/build_docx.py
-```
+The tracked manuscript is `manuscript/manuscript.tex`, `manuscript/manuscript.docx`, the figure files, and `manuscript/tables/`. The Python builders that redraw figures and regenerate the Word file stay on this machine and are not in the repository.
 
 `main.py` still trains an MLP and an SVM on hard BIGCLAM labels. That accuracy is not a study result.
 
@@ -52,7 +46,9 @@ docs/STUDY_NOTES.md                bake-off, related work, commands
 
 ## Citation
 
-Samimi S, Noorani M. Overlapping community detection on fused patient-similarity graphs: a locked multi-cohort evaluation with a pre-specified lead policy. 2026.
+Code: https://github.com/saeedsamimi995/snf-overlap-evaluation
+
+Samimi S. Overlapping community detection on fused patient-similarity graphs: a locked multi-cohort evaluation with a pre-specified lead policy. 2026.
 
 The overlapping-affiliation baseline is Yang J, Leskovec J. Overlapping community detection at scale. WSDM. 2013:587–596. The hard fusion step is Wang B, et al. Similarity network fusion. Nat Methods. 2014;11:333–337.
 

@@ -24,7 +24,6 @@
 a locked multi-cohort evaluation with a pre-specified lead policy}
 
 \author[1,*]{S.~Samimi}
-\author[1]{M.~Noorani}
 \affil[1]{Department of Electrical and Computer Engineering, K.N.~Toosi University of Technology, Tehran, Iran}
 \affil[*]{Corresponding author: \href{mailto:saeedsamimi995@gmail.com}{saeedsamimi995@gmail.com}}
 \renewcommand\Affilfont{\itshape\small}
@@ -287,7 +286,7 @@ The GSE25066 graph is built on $1{,}400$ of $2{,}000$ locked genes ($70\%$). Reb
 The hard SNF partition remains the positive result (METABRIC age+PAM50 Cox $p \approx 1.7\times10^{-4}$; BH $q \approx 8.3\times10^{-4}$ within five hard methods). Under locked settings, the GSE25066 treatment-response test is null in LumA (five pCR events) and in the hard cluster with the most mixed patients (sixteen pCR events). No treatment-resistance claim is made. NOCD-X remains the soft lead by the pre-specified rule, and the lead is not reversed.
 
 \section{Data and code availability}
-Public cohorts under their access terms. Tables: \texttt{lead\_decision\_table.csv}, \texttt{hard\_cox\_bh.csv} (Cox proportional-hazards BH), \texttt{soft\_residual\_bh.csv}, \texttt{delta\_c\_bootstrap.csv}, \texttt{soft\_cross\_cohort\_summary.csv}. Code: \texttt{run\_snf\_overlap\_sota.py}, \texttt{run\_snf\_bigclam\_study.py}, \texttt{python -m scripts.run\_ceiling\_experiments}, \texttt{python -m src.analysis.gse25066\_response}. Ceiling tables are in \texttt{results/ceiling/}, including \texttt{view\_ablation.csv} and \texttt{program\_contrasts.csv}. GSE25066 outputs are \texttt{results/gse25066/pcr\_tests.csv} and \texttt{results/gse25066/assignments.csv}. The assignment file contains age, ER/PR/HER2, stage, grade, pCR/RD, residual cancer burden, distant relapse-free survival, and PAM50. Only pCR, PAM50, and the hard SNF cluster entered the tests. Gene-overlap sensitivity is \texttt{results/gse25066/gene\_overlap\_sensitivity.json}. The identity call is \texttt{results/ceiling/decision\_note.md}. Environment: \texttt{environment.yml}.
+Public cohorts under their access terms. Code repository: \url{https://github.com/saeedsamimi995/snf-overlap-evaluation}. Tables: \texttt{lead\_decision\_table.csv}, \texttt{hard\_cox\_bh.csv} (Cox proportional-hazards BH), \texttt{soft\_residual\_bh.csv}, \texttt{delta\_c\_bootstrap.csv}, \texttt{soft\_cross\_cohort\_summary.csv}. Code: \texttt{run\_snf\_overlap\_sota.py}, \texttt{run\_snf\_bigclam\_study.py}, \texttt{python -m scripts.run\_ceiling\_experiments}, \texttt{python -m src.analysis.gse25066\_response}. Ceiling tables are in \texttt{results/ceiling/}, including \texttt{view\_ablation.csv} and \texttt{program\_contrasts.csv}. GSE25066 outputs are \texttt{results/gse25066/pcr\_tests.csv} and \texttt{results/gse25066/assignments.csv}. The assignment file contains age, ER/PR/HER2, stage, grade, pCR/RD, residual cancer burden, distant relapse-free survival, and PAM50. Only pCR, PAM50, and the hard SNF cluster entered the tests. Gene-overlap sensitivity is \texttt{results/gse25066/gene\_overlap\_sensitivity.json}. The identity call is \texttt{results/ceiling/decision\_note.md}. Environment: \texttt{environment.yml}.
 
 \begin{thebibliography}{99}
 

@@ -1,5 +1,7 @@
 # Study notes
 
+Repository: https://github.com/saeedsamimi995/snf-overlap-evaluation
+
 One note for the locked evaluation. The manuscript is the result. This file keeps the bake-off, the earlier soft screen, the comparison set, and the commands that used to live in separate notes.
 
 ## What the paper is
@@ -57,15 +59,9 @@ python run_snf_soft_bakeoff.py --harmonized-dir data/harmonized --results-dir re
 
 The fair expression-only comparisons are the methods subtype papers actually report: SNF plus a spectral cut (Wang et al., Nat Methods 2014), consensus clustering, NMF, and Leiden. polyClustR, DSCC, and 3Mont are network precedents, not drop-in baselines. SUPREME, MOFA+, and MSFN use extra omics and are out of scope. No 2023–2026 breast-cancer expression paper applies BIGCLAM itself. Biological anchors remain Perou 2000, Parker PAM50 2009, TCGA BRCA 2012, and Curtis METABRIC 2012.
 
-## Rebuild the manuscript
+## Manuscript files
 
-```bash
-python manuscript/revise_figures_and_tables.py
-python manuscript/export_figures.py
-python manuscript/build_docx.py
-```
-
-`revise_figures_and_tables.py` redraws the Kaplan–Meier risk tables and the decision figure. `export_figures.py` writes the pipeline and bar charts and does not overwrite those revised Kaplan–Meier files. Figures live in `manuscript/paper_figures/includegraphics/`. Tables live in `manuscript/tables/`.
+The repository tracks `manuscript/manuscript.tex`, `manuscript/manuscript.docx`, `manuscript/paper_figures/includegraphics/`, and `manuscript/tables/`. The local builders that redraw figures and write the Word file are not in the repository.
 
 ## Legacy path
 

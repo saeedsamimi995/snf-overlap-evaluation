@@ -50,8 +50,6 @@ data/metabric/
 data/tcga/
 data/gse25066/*.gz
 results/q1_smoke/
-# But keep the reduced_data_BC_label.csv as it's a generated result
-!data/reduced_data_BC_label.csv
 
 # Model files
 models/*.pth
@@ -59,10 +57,16 @@ models/*.joblib
 models/*.h5
 models/*.pt
 
-# Results
+# Generated plots. The manuscript copies in manuscript/paper_figures stay tracked.
+# Result tables (csv, json, md) stay tracked.
+Results/**/*.png
+Results/*.svg
+results/**/*.png
 results/*.svg
-results/*.png
 results/*.pdf
+
+# Exploratory notebook. Not part of the locked study.
+notebooks/
 
 # Cached graphs and membership matrices. Study scripts rewrite these.
 *.npy
@@ -77,4 +81,10 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Local manuscript builders. The tex, Word file, figures, and tables stay tracked.
+manuscript/build_docx.py
+manuscript/export_figures.py
+manuscript/revise_figures_and_tables.py
+manuscript/revise_stats_and_figs.py
 
