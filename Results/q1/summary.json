@@ -1,0 +1,86 @@
+{
+  "locked": {
+    "discovery_cohort": "gse96058",
+    "num_communities": 5,
+    "stability_ari": {
+      "4": 0.7641961312491149,
+      "5": 0.8502219390839307,
+      "6": 0.7606230343380183,
+      "7": 0.7736917475820845,
+      "8": 0.7895103792754182
+    },
+    "stability_peak_ratio": {
+      "4": 0.069759397916234,
+      "5": 0.12316262248956807,
+      "6": 0.1567019137419279,
+      "7": 0.2209939804505041,
+      "8": 0.2647110124847673
+    },
+    "n_genes": 2000,
+    "knn_k": 15,
+    "overlap_ratio": 0.5,
+    "discovery_mixed_fraction": 0.22242590895203176,
+    "discovery_peak_ratio": 0.03739264634251645,
+    "fit_iterations": 250,
+    "restarts": 5,
+    "learning_rate": 0.05,
+    "l1": 0.01,
+    "n_neg": 8,
+    "max_peak_ratio": 0.85,
+    "seed": 42,
+    "max_samples": null,
+    "graph": "symmetric cosine kNN, components joined by the strongest bridge",
+    "gene_rule": "intersection, then top discovery variance, then within-cohort z-score",
+    "likelihood": "balanced full LL (n<400) or neg-sampling + L1 + NMF init"
+  },
+  "cohorts": {
+    "gse96058": {
+      "mixed_fraction": 0.22242590895203176,
+      "peak_ratio": 0.03739264989845976,
+      "baseline_cluster_counts": {
+        "kmeans": 5,
+        "nmf": 5,
+        "spectral": 5,
+        "leiden": 5,
+        "consensus": 5,
+        "snf": 5
+      }
+    },
+    "tcga": {
+      "mixed_fraction": 0.18847209515096067,
+      "peak_ratio": 0.06214755741942212,
+      "baseline_cluster_counts": {
+        "kmeans": 5,
+        "nmf": 5,
+        "spectral": 5,
+        "leiden": 5,
+        "consensus": 5,
+        "snf": 5
+      }
+    },
+    "metabric": {
+      "mixed_fraction": 0.2015151515151515,
+      "peak_ratio": 0.026501519528614056,
+      "baseline_cluster_counts": {
+        "kmeans": 5,
+        "nmf": 5,
+        "spectral": 5,
+        "leiden": 5,
+        "consensus": 5,
+        "snf": 5
+      }
+    }
+  },
+  "decision": {
+    "recommended_primary_prognostic": "snf",
+    "recommended_overlap_module": "bigclam",
+    "do_not_lead_with": [
+      "mlp_svm_accuracy",
+      "bigclam_mixed_survival"
+    ],
+    "reason": "SNF has the strongest METABRIC age+PAM50-adjusted Cox signal (p~1.7e-4) and matches the baseline used in recent MOVICS-style papers. BIGCLAM is stable and peaked (ARI 0.85, mixed ~20%) but weaker on adjusted Cox than SNF/NMF; keep it for overlapping membership, not as the sole abstract claim.",
+    "ranking_file": "results/q1/method_ranking.csv",
+    "manuscript_guide": "docs/MANUSCRIPT_RESULTS.md",
+    "related_work": "docs/RELATED_WORK.md"
+  }
+}

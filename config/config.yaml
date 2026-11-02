@@ -6,15 +6,56 @@ data_preparation:
   tcga:
     clinical_file: "data/brca_tcga_clinical_data.tsv"
     expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
-    output_file: "data/tcga_brca_data_target_added.csv"
-    pam50_column: null  # Auto-detect if null, or specify column name
+    output_file: "data/prepared/tcga_clinical.csv"
+    pam50_file: "data/tcga/brca_pancan_clinical_patient.txt"
+    pam50_column: "SUBTYPE"
   
   # GSE96058 dataset paths
   gse96058:
     expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
-    clinical_file: null  # Optional: path to clinical/metadata file if available
-    output_file: "data/gse96058_data_target_added.csv"
-    pam50_column: null  # Auto-detect if null, or specify column name
+    clinical_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/GSE96058_clinical_data.csv"
+    output_file: "data/prepared/gse96058_clinical.csv"
+    pam50_column: "PAM50"
+
+# Locked three-cohort study. Discovery settings are not retuned on METABRIC.
+q1:
+  discovery_cohort: gse96058
+  n_genes: 2000
+  min_shared_genes: 200
+  knn_k: 15
+  overlap_ratio: 0.75   # overwritten on discovery by choose_overlap_ratio
+  communities: [4, 5, 6, 7, 8]
+  bootstraps: 6
+  bootstrap_fraction: 0.8
+  stability_iterations: 120
+  stability_restarts: 2
+  fit_iterations: 250
+  restarts: 5
+  learning_rate: 0.05
+  l1: 0.01
+  n_neg: 8
+  max_peak_ratio: 0.85
+  min_stability_ari: 0.05
+  seed: 42
+  results_dir: results/q1
+  harmonized_dir: data/harmonized
+  gse96058:
+    expression_file: "data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv"
+    clinical_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/GSE96058_clinical_data.csv"
+    clinical_output: "data/prepared/gse96058_clinical.csv"
+    os_time_unit: days
+  tcga:
+    expression_file: "data/Human__TCGA_BRCA__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct"
+    clinical_file: "data/brca_tcga_clinical_data.tsv"
+    pam50_file: "data/tcga/brca_pancan_clinical_patient.txt"
+    clinical_output: "data/prepared/tcga_clinical.csv"
+    os_time_unit: months
+  metabric:
+    expression_file: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_mrna_illumina_microarray.txt"
+    patient_clinical: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_clinical_patient.txt"
+    sample_clinical: "D:/Projects/multimodal-breast-cancer-subtyping/data/metabric/data_clinical_sample.txt"
+    output_dir: "data/metabric"
+    os_time_unit: months
 
 # Data paths (for main pipeline)
 data:

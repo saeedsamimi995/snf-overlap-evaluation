@@ -43,6 +43,13 @@ data/*.tsv
 data/*.cct
 data/*.npy
 data/*.pkl
+data/harmonized/
+data/harmonized_smoke/
+data/prepared/
+data/metabric/
+data/tcga/
+data/gse25066/*.gz
+results/q1_smoke/
 # But keep the reduced_data_BC_label.csv as it's a generated result
 !data/reduced_data_BC_label.csv
 
@@ -56,6 +63,9 @@ models/*.pt
 results/*.svg
 results/*.png
 results/*.pdf
+
+# Cached graphs and membership matrices. Study scripts rewrite these.
+*.npy
 
 # OS
 .DS_Store

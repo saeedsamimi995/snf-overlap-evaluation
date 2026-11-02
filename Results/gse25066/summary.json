@@ -1,0 +1,18 @@
+{
+  "cohort": "GSE25066",
+  "regimen": "neoadjuvant taxane plus anthracycline",
+  "endpoint": "pathologic complete response versus residual disease",
+  "n": 508,
+  "n_pcr": 99,
+  "n_rd": 389,
+  "n_luma": 160,
+  "locked_genes_available": 1400,
+  "locked_genes_requested": 2000,
+  "locked_ratios": {
+    "nocd_x": 0.6,
+    "bigclam": 0.5
+  },
+  "pre_stated_family": "NOCD-X Fisher tests inside LumA and inside the largest mixed hard cluster",
+  "primary_q_lt_0.05": false,
+  "decision": "null: mixed status does not change pCR after BH inside the pre-stated NOCD-X family"
+}

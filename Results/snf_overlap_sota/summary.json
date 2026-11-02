@@ -1,0 +1,137 @@
+{
+  "framing": "SNF hard + SOTA overlapping bake-off; BIGCLAM is comparison only",
+  "locked_from": {
+    "discovery_cohort": "gse96058",
+    "num_communities": 5,
+    "stability_ari": {
+      "4": 0.7641961312491149,
+      "5": 0.8502219390839307,
+      "6": 0.7606230343380183,
+      "7": 0.7736917475820845,
+      "8": 0.7895103792754182
+    },
+    "stability_peak_ratio": {
+      "4": 0.069759397916234,
+      "5": 0.12316262248956807,
+      "6": 0.1567019137419279,
+      "7": 0.2209939804505041,
+      "8": 0.2647110124847673
+    },
+    "n_genes": 2000,
+    "knn_k": 15,
+    "overlap_ratio": 0.5,
+    "discovery_mixed_fraction": 0.22242590895203176,
+    "discovery_peak_ratio": 0.03739264634251645,
+    "fit_iterations": 250,
+    "restarts": 5,
+    "learning_rate": 0.05,
+    "l1": 0.01,
+    "n_neg": 8,
+    "max_peak_ratio": 0.85,
+    "seed": 42,
+    "max_samples": null,
+    "graph": "symmetric cosine kNN, components joined by the strongest bridge",
+    "gene_rule": "intersection, then top discovery variance, then within-cohort z-score",
+    "likelihood": "balanced full LL (n<400) or neg-sampling + L1 + NMF init"
+  },
+  "cohorts": {
+    "gse96058": {
+      "snf_nocd_x": {
+        "peak_ratio": 0.32399057102921086,
+        "mixed_fraction": 0.255117629086465
+      },
+      "snf_nocd_g": {
+        "peak_ratio": 0.7964591272623186,
+        "mixed_fraction": 0.26397800183318054
+      },
+      "snf_slpa": {
+        "peak_ratio": 1.0,
+        "mixed_fraction": 0.7622975863122518
+      },
+      "snf_cesna_lite": {
+        "peak_ratio": 0.34259542859536096,
+        "mixed_fraction": 0.21692636724717385
+      },
+      "snf_bigclam": {
+        "peak_ratio": 0.11619482858296305,
+        "mixed_fraction": 0.26275588145432327
+      }
+    },
+    "tcga": {
+      "snf_nocd_x": {
+        "peak_ratio": 0.17780225633701988,
+        "mixed_fraction": 0.19304666056724612
+      },
+      "snf_nocd_g": {
+        "peak_ratio": 0.643814990593685,
+        "mixed_fraction": 0.13815187557182068
+      },
+      "snf_slpa": {
+        "peak_ratio": 1.0,
+        "mixed_fraction": 0.5782250686184812
+      },
+      "snf_cesna_lite": {
+        "peak_ratio": 0.3481761663033257,
+        "mixed_fraction": 0.21225983531564502
+      },
+      "snf_bigclam": {
+        "peak_ratio": 0.038218508818776996,
+        "mixed_fraction": 0.19762122598353157
+      }
+    },
+    "metabric": {
+      "snf_nocd_x": {
+        "peak_ratio": 0.19604422269392296,
+        "mixed_fraction": 0.1686868686868687
+      },
+      "snf_nocd_g": {
+        "peak_ratio": 0.7388934313546738,
+        "mixed_fraction": 0.19343434343434343
+      },
+      "snf_slpa": {
+        "peak_ratio": 1.0,
+        "mixed_fraction": 0.6919191919191919
+      },
+      "snf_cesna_lite": {
+        "peak_ratio": 0.332266626917481,
+        "mixed_fraction": 0.20202020202020202
+      },
+      "snf_bigclam": {
+        "peak_ratio": 0.07262013673180617,
+        "mixed_fraction": 0.2545454545454545
+      }
+    }
+  },
+  "ratio_lock": {
+    "snf_nocd_x": 0.6,
+    "snf_nocd_g": 0.9,
+    "snf_slpa": 0.8,
+    "snf_cesna_lite": 0.7,
+    "snf_bigclam": 0.5
+  },
+  "lead_soft_method": "snf_nocd_x",
+  "lead_metrics": {
+    "soft_method": "snf_nocd_x",
+    "role": "sota_candidate",
+    "metabric_own_hard_plus_mixed_p": 0.4166892875923228,
+    "metabric_snf_hard_plus_mixed_p": 0.803681630242203,
+    "metabric_hard_cox_p": 7.431232159162603e-06,
+    "metabric_luma_OR": 1.827861391587816,
+    "metabric_luma_p": 1.1095709847483038e-06,
+    "metabric_peak_ratio": 0.1960442226939229,
+    "metabric_mixed_fraction": 0.1686868686868687
+  },
+  "bigclam_baseline": {
+    "soft_method": "snf_bigclam",
+    "role": "baseline_comparison",
+    "metabric_own_hard_plus_mixed_p": 0.03646488403244222,
+    "metabric_snf_hard_plus_mixed_p": 0.10584673594276017,
+    "metabric_hard_cox_p": 0.022185936982680166,
+    "metabric_luma_OR": 3.0023688803923196,
+    "metabric_luma_p": 3.241180956602508e-25,
+    "metabric_peak_ratio": 0.07262013673180617,
+    "metabric_mixed_fraction": 0.2545454545454545
+  },
+  "policy": "BIGCLAM is classical comparison only. Lead soft engine chosen by quality filters (mixed 10-40%, peak<0.85, LumA OR>1) then residual/hard Cox.",
+  "lead_rule": "quality_filtered_residual_then_hard"
+}

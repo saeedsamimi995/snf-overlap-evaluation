@@ -1,0 +1,16 @@
+cohort,soft_method,is_bigclam_baseline,n,n_events,lr_stat,p,soft_name,note,test,q_bh_within_cohort,q_bh_metabric_family
+gse96058,snf_nocd_x,False,3273,336,0.0404862126406442,0.8405329181337234,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.8405329181337236,0.4166892875923228
+gse96058,snf_nocd_g,False,3273,336,3.258318226209667,0.0710619726959843,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.17765493173996075,0.228661176782637
+gse96058,snf_slpa,False,3273,336,2.55347075116606,0.1100522562549521,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.18342042709158682,0.027666545017544
+gse96058,snf_cesna_lite,False,3273,336,4.753028526950402,0.0292467777868692,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.146233888934346,0.189934017973159
+gse96058,snf_bigclam,True,3273,336,0.0797951469539839,0.7775752133558527,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.8405329181337236,0.09116221008110549
+metabric,snf_nocd_x,False,1979,1143,0.6596337088831206,0.4166892875923228,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.4166892875923228,0.4166892875923228
+metabric,snf_nocd_g,False,1979,1143,1.7736667392218806,0.1829289414261096,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.228661176782637,0.228661176782637
+metabric,snf_slpa,False,1979,1143,7.696334257216222,0.0055333090035088,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.027666545017544,0.027666545017544
+metabric,snf_cesna_lite,False,1979,1143,2.498422307120564,0.1139604107838954,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.189934017973159,0.189934017973159
+metabric,snf_bigclam,True,1979,1143,4.375231159368923,0.0364648840324422,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.09116221008110549,0.09116221008110549
+tcga,snf_nocd_x,False,1079,151,0.366195641184504,0.5450853078084803,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.5450853078084803,0.4166892875923228
+tcga,snf_nocd_g,False,1079,151,3.60634870674744,0.0575593628407984,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.143898407101996,0.228661176782637
+tcga,snf_slpa,False,1079,151,8.0901426186158,0.004450665979576,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.02225332989788,0.027666545017544
+tcga,snf_cesna_lite,False,1079,151,1.5124723118615293,0.2187622207792146,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.36460370129869096,0.189934017973159
+tcga,snf_bigclam,True,1079,151,0.8021292873474977,0.3704575091682837,mixed,age+PAM50+hard vs age+PAM50+hard+soft,own_hard_plus_mixed,0.4630718864603546,0.09116221008110549

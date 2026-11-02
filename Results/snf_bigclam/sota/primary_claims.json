@@ -1,0 +1,143 @@
+{
+  "paper_identity": "Hard SNF subtypes + soft overlap quantification (dual-output framework)",
+  "not_claiming": "BIGCLAM is not sold as the best hard clusterer",
+  "primary_hard_method": "SNF (Euclidean + correlation fusion)",
+  "overlap_module": "community affiliation on sparsified SNF graph (BIGCLAM engine)",
+  "cohorts": [
+    "gse96058",
+    "tcga",
+    "metabric"
+  ],
+  "concordance_file": "D:\\Projects\\BIGCLAM\\New-Clustering-of-Breast-Cancer-Subtypes-Using-Gene-Expression-Data-and-the-BIGCLAM-Method\\results\\snf_bigclam\\sota\\concordance.csv",
+  "within_subtype_file": "D:\\Projects\\BIGCLAM\\New-Clustering-of-Breast-Cancer-Subtypes-Using-Gene-Expression-Data-and-the-BIGCLAM-Method\\results\\snf_bigclam\\sota\\within_subtype_residual.csv",
+  "metabric_hard_ranking": [
+    {
+      "method": "snf",
+      "cox_p_given_age_pam50": 0.0001661342462926,
+      "pam50_ari": 0.2712896320098168,
+      "intclust_ari": 0.1255642971127819
+    },
+    {
+      "method": "leiden",
+      "cox_p_given_age_pam50": 0.0031243513906831,
+      "pam50_ari": 0.2680143880836019,
+      "intclust_ari": 0.1608736645672787
+    },
+    {
+      "method": "nmf",
+      "cox_p_given_age_pam50": 0.0101065625558441,
+      "pam50_ari": 0.1430344269413448,
+      "intclust_ari": 0.0711863405384667
+    },
+    {
+      "method": "snf_bigclam",
+      "cox_p_given_age_pam50": 0.0221859369826801,
+      "pam50_ari": 0.130771391907699,
+      "intclust_ari": 0.138794613059287
+    },
+    {
+      "method": "consensus",
+      "cox_p_given_age_pam50": 0.0766873219036227,
+      "pam50_ari": 0.2690705420980416,
+      "intclust_ari": 0.1483065368152871
+    },
+    {
+      "method": "snf_bigclam_mixed",
+      "cox_p_given_age_pam50": 0.2066776516605212,
+      "pam50_ari": -0.0234759874239501,
+      "intclust_ari": 0.0069864695567313
+    }
+  ],
+  "residual_overlap": [
+    {
+      "cohort": "gse96058",
+      "n": 3273,
+      "n_events": 336,
+      "lr_stat": 0.7975408715665253,
+      "p": 0.3718296269928117,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_mixed"
+    },
+    {
+      "cohort": "gse96058",
+      "n": 3273,
+      "n_events": 336,
+      "lr_stat": 0.7765509375758484,
+      "p": 0.3781980656800046,
+      "soft_name": "entropy",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_entropy"
+    },
+    {
+      "cohort": "gse96058",
+      "n": 3273,
+      "n_events": 336,
+      "lr_stat": 0.0797951469539839,
+      "p": 0.7775752133558527,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snfbigclam_hard_plus_mixed"
+    },
+    {
+      "cohort": "tcga",
+      "n": 1079,
+      "n_events": 151,
+      "lr_stat": 0.761597822220665,
+      "p": 0.3828289504072724,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_mixed"
+    },
+    {
+      "cohort": "tcga",
+      "n": 1079,
+      "n_events": 151,
+      "lr_stat": 3.24413591495113,
+      "p": 0.0716794772532199,
+      "soft_name": "entropy",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_entropy"
+    },
+    {
+      "cohort": "tcga",
+      "n": 1079,
+      "n_events": 151,
+      "lr_stat": 0.8021292873474977,
+      "p": 0.3704575091682837,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snfbigclam_hard_plus_mixed"
+    },
+    {
+      "cohort": "metabric",
+      "n": 1979,
+      "n_events": 1143,
+      "lr_stat": 2.6151616868028214,
+      "p": 0.1058467359427601,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_mixed"
+    },
+    {
+      "cohort": "metabric",
+      "n": 1979,
+      "n_events": 1143,
+      "lr_stat": 3.327236269802597,
+      "p": 0.0681412870290759,
+      "soft_name": "entropy",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snf_hard_plus_entropy"
+    },
+    {
+      "cohort": "metabric",
+      "n": 1979,
+      "n_events": 1143,
+      "lr_stat": 4.375231159368923,
+      "p": 0.0364648840324422,
+      "soft_name": "mixed",
+      "note": "age+PAM50+hard vs age+PAM50+hard+soft",
+      "test": "snfbigclam_hard_plus_mixed"
+    }
+  ]
+}

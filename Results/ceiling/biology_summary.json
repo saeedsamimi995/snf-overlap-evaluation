@@ -1,0 +1,274 @@
+{
+  "treatment": {
+    "metabric": {
+      "present": [],
+      "note": "No hormone, chemotherapy, or radiotherapy column is on the harmonized clinical table, so treatment was not added as a covariate."
+    },
+    "gse96058": {
+      "present": [],
+      "note": "No hormone, chemotherapy, or radiotherapy column is on the harmonized clinical table, so treatment was not added as a covariate."
+    }
+  },
+  "metabric_survival_hits": [],
+  "metabric_enrichment_hits": [
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "intclust",
+      "level": "10",
+      "n_focus": 226,
+      "n_flag_in_focus": 3,
+      "odds_ratio": 0.05783534065814965,
+      "p": 1.8595993275724535e-15,
+      "q": 2.4174791258441897e-14
+    },
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "intclust",
+      "level": "7",
+      "n_focus": 190,
+      "n_flag_in_focus": 51,
+      "odds_ratio": 1.9538093906500242,
+      "p": 0.0003194420967408189,
+      "q": 0.0013842490858768817
+    },
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "PAM50",
+      "level": "Claudin-low",
+      "n_focus": 218,
+      "n_flag_in_focus": 22,
+      "odds_ratio": 0.5256257842943003,
+      "p": 0.003900406088757337,
+      "q": 0.012676319788461345
+    },
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "PAM50",
+      "level": "LumA",
+      "n_focus": 700,
+      "n_flag_in_focus": 157,
+      "odds_ratio": 1.8278613915878157,
+      "p": 1.1095709847483038e-06,
+      "q": 7.2122114008639745e-06
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "10",
+      "n_focus": 226,
+      "n_flag_in_focus": 14,
+      "odds_ratio": 0.17035040431266846,
+      "p": 4.9233744191594444e-15,
+      "q": 1.6000966862268194e-14
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "3",
+      "n_focus": 290,
+      "n_flag_in_focus": 103,
+      "odds_ratio": 1.7705335591502527,
+      "p": 4.030982936081111e-05,
+      "q": 7.486111167007778e-05
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "4ER+",
+      "n_focus": 260,
+      "n_flag_in_focus": 47,
+      "odds_ratio": 0.6098252534903073,
+      "p": 0.002880568956306881,
+      "q": 0.004160821825776605
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "4ER-",
+      "n_focus": 83,
+      "n_flag_in_focus": 9,
+      "odds_ratio": 0.34447174447174445,
+      "p": 0.0011534541153614608,
+      "q": 0.0018743629374623739
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "5",
+      "n_focus": 190,
+      "n_flag_in_focus": 20,
+      "odds_ratio": 0.3174526008750608,
+      "p": 1.066803651004275e-07,
+      "q": 2.773689492611115e-07
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "7",
+      "n_focus": 190,
+      "n_flag_in_focus": 75,
+      "odds_ratio": 2.069017938583156,
+      "p": 9.800101579356437e-06,
+      "q": 2.1233553421938947e-05
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "8",
+      "n_focus": 299,
+      "n_flag_in_focus": 141,
+      "odds_ratio": 3.2401924887540536,
+      "p": 8.219051210057777e-19,
+      "q": 5.342383286537555e-18
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "PAM50",
+      "level": "Claudin-low",
+      "n_focus": 218,
+      "n_flag_in_focus": 13,
+      "odds_ratio": 0.16384270781483326,
+      "p": 4.1197426530580734e-15,
+      "q": 1.6000966862268194e-14
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "PAM50",
+      "level": "LumA",
+      "n_focus": 700,
+      "n_flag_in_focus": 276,
+      "odds_ratio": 3.0023688803923196,
+      "p": 3.241180956602508e-25,
+      "q": 4.21353524358326e-24
+    }
+  ],
+  "metabric_program_hits": [
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "estrogen",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": 0.08814722299575806,
+      "p": 7.890853958699833e-05,
+      "q": 0.00019727134896749583,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "her2",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.18455290794372559,
+      "p": 1.8030943780256507e-05,
+      "q": 9.015471890128253e-05,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "proliferation",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.12866713106632233,
+      "p": 0.0020836896286368953,
+      "q": 0.0034728160477281588,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "claudin",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.0978664979338646,
+      "p": 0.03693552583024068,
+      "q": 0.04616940728780085,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    }
+  ],
+  "scanb_program_hits": [
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "estrogen",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": 0.08110342919826508,
+      "p": 0.004118611617947502,
+      "q": 0.005148264522434377,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "her2",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": -0.5142054557800293,
+      "p": 3.409737155651975e-21,
+      "q": 1.7048685778259872e-20,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "proliferation",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": 0.16481727361679077,
+      "p": 2.038661476716642e-05,
+      "q": 5.096653691791605e-05,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "claudin",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": -0.1684814989566803,
+      "p": 0.00012120001587284701,
+      "q": 0.00020200002645474503,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    }
+  ]
+}

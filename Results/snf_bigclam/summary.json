@@ -1,0 +1,69 @@
+{
+  "locked_from": {
+    "discovery_cohort": "gse96058",
+    "num_communities": 5,
+    "stability_ari": {
+      "4": 0.7641961312491149,
+      "5": 0.8502219390839307,
+      "6": 0.7606230343380183,
+      "7": 0.7736917475820845,
+      "8": 0.7895103792754182
+    },
+    "stability_peak_ratio": {
+      "4": 0.069759397916234,
+      "5": 0.12316262248956807,
+      "6": 0.1567019137419279,
+      "7": 0.2209939804505041,
+      "8": 0.2647110124847673
+    },
+    "n_genes": 2000,
+    "knn_k": 15,
+    "overlap_ratio": 0.5,
+    "discovery_mixed_fraction": 0.22242590895203176,
+    "discovery_peak_ratio": 0.03739264634251645,
+    "fit_iterations": 250,
+    "restarts": 5,
+    "learning_rate": 0.05,
+    "l1": 0.01,
+    "n_neg": 8,
+    "max_peak_ratio": 0.85,
+    "seed": 42,
+    "max_samples": null,
+    "graph": "symmetric cosine kNN, components joined by the strongest bridge",
+    "gene_rule": "intersection, then top discovery variance, then within-cohort z-score",
+    "likelihood": "balanced full LL (n<400) or neg-sampling + L1 + NMF init"
+  },
+  "method": "SNF-BIGCLAM",
+  "cohorts": {
+    "gse96058": {
+      "peak_ratio": 0.11619482858296305,
+      "mixed_fraction": 0.26275588145432327,
+      "overlap_ratio": 0.5,
+      "log_likelihood": -44113.5625,
+      "claudin_low_odds_ratio": NaN,
+      "claudin_low_p": 1.0
+    },
+    "tcga": {
+      "peak_ratio": 0.038218508818776996,
+      "mixed_fraction": 0.19762122598353157,
+      "overlap_ratio": 0.5,
+      "log_likelihood": -13632.6494140625,
+      "claudin_low_odds_ratio": NaN,
+      "claudin_low_p": 1.0
+    },
+    "metabric": {
+      "peak_ratio": 0.07262013673180617,
+      "mixed_fraction": 0.2545454545454545,
+      "overlap_ratio": 0.5,
+      "log_likelihood": -28964.701171875,
+      "claudin_low_odds_ratio": 0.16384270781483326,
+      "claudin_low_p": 4.1197426530580734e-15
+    }
+  },
+  "overlap_ratio_locked": 0.5,
+  "recommended_story": {
+    "primary_hard_partition": "snf",
+    "overlapping_module": "snf_bigclam",
+    "novelty": "Overlapping community affiliation (BIGCLAM) inferred on SNF-fused patient similarity graphs, locked on SCAN-B and validated on TCGA and METABRIC, with residual soft-membership tests beyond hard labels."
+  }
+}

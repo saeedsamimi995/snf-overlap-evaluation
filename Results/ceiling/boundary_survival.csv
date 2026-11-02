@@ -1,0 +1,53 @@
+cohort,engine,scope,flag,n,n_flag,n_events,p,note,q
+metabric,nocd_x,hard_0,mixed,1009,186,626,0.08792003805109694,adjusted for age,0.29526673886656996
+metabric,nocd_x,hard_0,boundary,1009,19,0,,too few in one class,
+metabric,nocd_x,hard_1,mixed,280,32,187,0.17000339538521575,adjusted for age,0.3400067907704315
+metabric,nocd_x,hard_1,boundary,280,31,187,0.11072502707496373,adjusted for age,0.29526673886656996
+metabric,nocd_x,hard_2,mixed,228,1,0,,too few in one class,
+metabric,nocd_x,hard_2,boundary,228,1,0,,too few in one class,
+metabric,nocd_x,hard_3,mixed,395,108,175,0.35659717203238805,adjusted for age,0.5705554752518209
+metabric,nocd_x,hard_3,boundary,395,64,175,0.9831083437586328,adjusted for age,0.9831083437586328
+metabric,nocd_x,hard_4,mixed,68,7,0,,too few in one class,
+metabric,nocd_x,hard_4,boundary,68,7,0,,too few in one class,
+metabric,nocd_x,LumA,mixed,700,157,378,0.029353307150568924,adjusted for age,0.2348264572045514
+metabric,nocd_x,LumA,boundary,700,55,378,0.6491876607520879,adjusted for age,0.8655835476694506
+metabric,nocd_x,all,boundary,1979,122,1143,0.9387493819564482,adjusted for age,0.9831083437586328
+metabric,bigclam,hard_0,mixed,1009,410,626,0.5876693593338724,adjusted for age,0.9723066190623747
+metabric,bigclam,hard_0,boundary,1009,43,626,0.82257295387804,adjusted for age,0.9723066190623747
+metabric,bigclam,hard_1,mixed,280,20,187,0.454919013372755,adjusted for age,0.9723066190623747
+metabric,bigclam,hard_1,boundary,280,19,0,,too few in one class,
+metabric,bigclam,hard_2,mixed,228,0,0,,too few in one class,
+metabric,bigclam,hard_2,boundary,228,0,0,,too few in one class,
+metabric,bigclam,hard_3,mixed,395,69,175,0.6148873759449849,adjusted for age,0.9723066190623747
+metabric,bigclam,hard_3,boundary,395,41,175,0.9723066190623747,adjusted for age,0.9723066190623747
+metabric,bigclam,hard_4,mixed,68,5,0,,too few in one class,
+metabric,bigclam,hard_4,boundary,68,5,0,,too few in one class,
+metabric,bigclam,LumA,mixed,700,276,378,0.7202358706787112,adjusted for age,0.9723066190623747
+metabric,bigclam,LumA,boundary,700,57,378,0.6472181028422368,adjusted for age,0.9723066190623747
+metabric,bigclam,all,boundary,1979,108,1143,0.8646312423168439,adjusted for age,0.9723066190623747
+gse96058,nocd_x,hard_0,mixed,1648,410,175,0.908700040393531,adjusted for age,0.908700040393531
+gse96058,nocd_x,hard_0,boundary,1648,90,175,0.5514258026700567,adjusted for age,0.7719961237380794
+gse96058,nocd_x,hard_1,mixed,50,0,0,,too few in one class,
+gse96058,nocd_x,hard_1,boundary,50,0,0,,too few in one class,
+gse96058,nocd_x,hard_2,mixed,154,17,0,,too few in one class,
+gse96058,nocd_x,hard_2,boundary,154,17,0,,too few in one class,
+gse96058,nocd_x,hard_3,mixed,292,1,0,,too few in one class,
+gse96058,nocd_x,hard_3,boundary,292,1,0,,too few in one class,
+gse96058,nocd_x,hard_4,mixed,1129,407,66,0.7052904582329971,adjusted for age,0.8228388679384966
+gse96058,nocd_x,hard_4,boundary,1129,262,66,0.5026533581430928,adjusted for age,0.7719961237380794
+gse96058,nocd_x,LumA,mixed,1657,545,116,0.43123150497791063,adjusted for age,0.7719961237380794
+gse96058,nocd_x,LumA,boundary,1657,271,116,0.23410062705252932,adjusted for age,0.7719961237380794
+gse96058,nocd_x,all,boundary,3273,370,336,0.019602429007434665,adjusted for age,0.13721700305204265
+gse96058,bigclam,hard_0,mixed,1648,573,175,0.6871904285497057,adjusted for age,0.8448421409420624
+gse96058,bigclam,hard_0,boundary,1648,121,175,0.06460768510284784,adjusted for age,0.45225379571993485
+gse96058,bigclam,hard_1,mixed,50,0,0,,too few in one class,
+gse96058,bigclam,hard_1,boundary,50,0,0,,too few in one class,
+gse96058,bigclam,hard_2,mixed,154,0,0,,too few in one class,
+gse96058,bigclam,hard_2,boundary,154,0,0,,too few in one class,
+gse96058,bigclam,hard_3,mixed,292,0,0,,too few in one class,
+gse96058,bigclam,hard_3,boundary,292,0,0,,too few in one class,
+gse96058,bigclam,hard_4,mixed,1129,287,66,0.671956154585446,adjusted for age,0.8448421409420624
+gse96058,bigclam,hard_4,boundary,1129,46,66,0.5520424431014204,adjusted for age,0.8448421409420624
+gse96058,bigclam,LumA,mixed,1657,453,116,0.7241504065217679,adjusted for age,0.8448421409420624
+gse96058,bigclam,LumA,boundary,1657,42,116,0.97024494617489,adjusted for age,0.97024494617489
+gse96058,bigclam,all,boundary,3273,167,336,0.3585903746228416,adjusted for age,0.8448421409420624

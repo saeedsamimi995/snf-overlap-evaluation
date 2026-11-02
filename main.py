@@ -110,25 +110,31 @@ def run_bigclam_pipeline(config):
         json.dump(data_json_with_bigclam, f, indent=4)
     
     # Step 4: Data Preparation for Classification
+    # This path is the legacy supplement. The paper analysis is run_q1_study.py.
+    # Split first, then add noise only to the training split, so a tumor and its
+    # noisy copy cannot land in both train and test.
     print("\n[Step 4] Preparing data for classification...")
     
     # Load the clustered dataset
     X_labeled = pd.read_csv(output_file)
     
-    # Augment data
-    X_augmented = augment_data(
-        X_labeled,
-        noise_mean=config['augmentation']['noise_mean'],
-        noise_std=config['augmentation']['noise_std']
-    )
-    
     # Split data
     X_train, X_valid, X_test, y_train, y_valid, y_test = split_data(
-        X_augmented,
+        X_labeled,
         test_size=config['data_splitting']['test_size'],
         valid_size=config['data_splitting']['valid_size'],
         random_state=config['data_splitting'].get('random_state', None)
     )
+
+    train_labeled = X_train.copy()
+    train_labeled["Community"] = np.asarray(y_train)
+    train_augmented = augment_data(
+        train_labeled,
+        noise_mean=config['augmentation']['noise_mean'],
+        noise_std=config['augmentation']['noise_std']
+    )
+    y_train = train_augmented.iloc[:, -1]
+    X_train = train_augmented.iloc[:, :-1]
     
     # Normalize data
     X_train_norm, X_valid_norm, X_test_norm, scaler = normalize_data(

@@ -1,0 +1,6 @@
+method,role,locked_mixed_ratio,metabric_mixed_fraction,pass_mixed_10_40,metabric_peak_ratio,pass_peak_lt_0.85,metabric_luma_OR,pass_luma_OR_gt_1,quality_pass,eligible_for_lead,lead_pool,own_hard_plus_mixed_p,hard_cox_p,selected_lead
+snf_slpa,sota_candidate,0.8,0.6919191919191919,False,1.0,False,0.4382104184804081,False,False,True,False,0.0055333090035088,0.0830599294045192,False
+snf_bigclam,baseline_comparison,0.5,0.2545454545454545,True,0.0726201367318061,True,3.00236888039232,True,True,False,False,0.0364648840324422,0.0221859369826801,False
+snf_cesna_lite,sota_candidate,0.7,0.202020202020202,True,0.332266626917481,True,0.5324846186588245,False,False,True,False,0.1139604107838954,0.1353047025476937,False
+snf_nocd_g,sota_candidate,0.9,0.1934343434343434,True,0.7388934313546738,True,0.6720488871224165,False,False,True,False,0.1829289414261096,0.0578516472059208,False
+snf_nocd_x,sota_candidate,0.6,0.1686868686868687,True,0.1960442226939229,True,1.827861391587816,True,True,True,True,0.4166892875923228,7.431232159162603e-06,True

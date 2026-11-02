@@ -1,0 +1,4 @@
+subtype,n_focus,n_flag_in_focus,odds_ratio,p,table,cohort
+Claudin-low,0,0,,1.0,"[[0, 0], [860, 2413]]",gse96058
+Claudin-low,0,0,,1.0,"[[0, 0], [192, 789]]",tcga
+Claudin-low,218,13,0.16384270781483326,4.1197426530580734e-15,"[[13, 205], [490, 1266]]",metabric

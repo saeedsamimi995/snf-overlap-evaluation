@@ -1,0 +1,10 @@
+{
+  "cohort": "gse96058",
+  "n": 3273,
+  "n_genes_locked": 2000,
+  "n_genes_on_array": 1400,
+  "fraction_of_locked_genes": 0.7,
+  "hard_label_ari_vs_locked": 0.8903725673278219,
+  "fused_affinity_spearman": 0.9821642039356523,
+  "note": "Same K, k, T, and seed. Soft engines were not refit. The locked gene list is unchanged."
+}

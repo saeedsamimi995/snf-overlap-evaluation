@@ -1,0 +1,10 @@
+cohort,n,n_events,lr_stat,p,soft_name,note,test
+gse96058,3273,336,0.7975408715665253,0.37182962699281175,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_mixed
+gse96058,3273,336,0.7765509375758484,0.3781980656800046,entropy,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_entropy
+gse96058,3273,336,0.07979514695398393,0.7775752133558527,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snfbigclam_hard_plus_mixed
+tcga,1079,151,0.761597822220665,0.3828289504072724,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_mixed
+tcga,1079,151,3.24413591495113,0.07167947725321996,entropy,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_entropy
+tcga,1079,151,0.8021292873474977,0.3704575091682837,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snfbigclam_hard_plus_mixed
+metabric,1979,1143,2.6151616868028214,0.10584673594276017,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_mixed
+metabric,1979,1143,3.3272362698025972,0.06814128702907599,entropy,age+PAM50+hard vs age+PAM50+hard+soft,snf_hard_plus_entropy
+metabric,1979,1143,4.375231159368923,0.03646488403244222,mixed,age+PAM50+hard vs age+PAM50+hard+soft,snfbigclam_hard_plus_mixed

@@ -1,0 +1,5 @@
+engine,scope,n,n_mixed,n_single,n_pcr_mixed,n_pcr_single,rate_mixed,rate_single,odds_ratio,p,note,family,q
+nocd_x,LumA,153,35,118,1,4,0.02857142857142857,0.03389830508474576,0.8382352941176471,1.0,"Fisher exact, pCR in mixed versus single; OR<1 means lower pCR in mixed",primary,1.0
+nocd_x,hard_1,168,34,134,2,14,0.058823529411764705,0.1044776119402985,0.5357142857142857,0.5307849577591054,"Fisher exact, pCR in mixed versus single; OR<1 means lower pCR in mixed",primary,1.0
+bigclam,LumA,153,29,124,0,5,0.0,0.04032258064516129,0.0,0.5840410183425496,"Fisher exact, pCR in mixed versus single; OR<1 means lower pCR in mixed",baseline,1.0
+bigclam,hard_1,168,30,138,3,13,0.1,0.09420289855072464,1.0683760683760684,1.0,"Fisher exact, pCR in mixed versus single; OR<1 means lower pCR in mixed",baseline,1.0

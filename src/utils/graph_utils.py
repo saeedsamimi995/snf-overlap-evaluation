@@ -17,22 +17,34 @@ def create_adjacency_and_assignments(df, threshold=0.4):
     Returns:
         tuple: (A, p2c) where A is the adjacency matrix and p2c is list of community sets.
     """
-    N = df.shape[0]
-    num_features = df.shape[1] - 1  # last column is community
-    
-    features = df.iloc[:, :num_features].values
-    similarity_matrix = cosine_similarity(features)
-    
+    label_column = None
+    for candidate in ("Community", "PAM50", "label"):
+        if candidate in df.columns:
+            label_column = candidate
+            break
+    if label_column is None and len(df.columns):
+        last = df.columns[-1]
+        if not pd.api.types.is_numeric_dtype(df[last]):
+            label_column = last
+
+    features = df.drop(columns=[label_column]) if label_column is not None else df
+    feature_values = features.apply(pd.to_numeric, errors="coerce").fillna(0.0).to_numpy(dtype=float)
+    N = feature_values.shape[0]
+    similarity_matrix = cosine_similarity(feature_values)
+
     # Create adjacency matrix based on similarity threshold
     A = (similarity_matrix > threshold).astype(int) - np.eye(N).astype(int)
-    
-    # Create community assignments from last column
-    if df.shape[1] > num_features:
-        community_assignments = df.iloc[:, -1].apply(lambda x: {int(x)}).tolist()
+
+    if label_column is not None:
+        community_assignments = []
+        for value in df[label_column].tolist():
+            try:
+                community_assignments.append({int(value)})
+            except (TypeError, ValueError):
+                community_assignments.append({0})
     else:
-        # If no community column, assign each node to its own community
         community_assignments = [{i} for i in range(N)]
-    
+
     return A, community_assignments
 
 

@@ -1,0 +1,438 @@
+{
+  "identity": "biological refinement",
+  "primary": "biological refinement",
+  "bars": {
+    "slpa_density_reversal": false,
+    "metabric_survival_q_lt_0.05": false,
+    "metabric_orthogonal_or_program_q_lt_0.05": true
+  },
+  "slpa_detail": "SLPA k=15 peak=1.000 mixed=0.692; best sparser k=5 peak=1.000 mixed=0.834",
+  "treatment": {
+    "metabric": {
+      "present": [],
+      "note": "No hormone, chemotherapy, or radiotherapy column is on the harmonized clinical table, so treatment was not added as a covariate."
+    },
+    "gse96058": {
+      "present": [],
+      "note": "No hormone, chemotherapy, or radiotherapy column is on the harmonized clinical table, so treatment was not added as a covariate."
+    }
+  },
+  "survival_hits": [],
+  "enrichment_hits_excluding_luma": [
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "intclust",
+      "level": "10",
+      "n_focus": 226,
+      "n_flag_in_focus": 3,
+      "odds_ratio": 0.0578353406581496,
+      "p": 1.859599327572453e-15,
+      "q": 2.4174791258441897e-14
+    },
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "intclust",
+      "level": "7",
+      "n_focus": 190,
+      "n_flag_in_focus": 51,
+      "odds_ratio": 1.953809390650024,
+      "p": 0.0003194420967408,
+      "q": 0.0013842490858768
+    },
+    {
+      "cohort": "metabric",
+      "engine": "nocd_x",
+      "label_family": "PAM50",
+      "level": "Claudin-low",
+      "n_focus": 218,
+      "n_flag_in_focus": 22,
+      "odds_ratio": 0.5256257842943003,
+      "p": 0.0039004060887573,
+      "q": 0.0126763197884613
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "10",
+      "n_focus": 226,
+      "n_flag_in_focus": 14,
+      "odds_ratio": 0.1703504043126684,
+      "p": 4.923374419159445e-15,
+      "q": 1.6000966862268194e-14
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "3",
+      "n_focus": 290,
+      "n_flag_in_focus": 103,
+      "odds_ratio": 1.770533559150253,
+      "p": 4.030982936081111e-05,
+      "q": 7.486111167007778e-05
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "4ER+",
+      "n_focus": 260,
+      "n_flag_in_focus": 47,
+      "odds_ratio": 0.6098252534903073,
+      "p": 0.0028805689563068,
+      "q": 0.0041608218257766
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "4ER-",
+      "n_focus": 83,
+      "n_flag_in_focus": 9,
+      "odds_ratio": 0.3444717444717444,
+      "p": 0.0011534541153614,
+      "q": 0.0018743629374623
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "5",
+      "n_focus": 190,
+      "n_flag_in_focus": 20,
+      "odds_ratio": 0.3174526008750608,
+      "p": 1.066803651004275e-07,
+      "q": 2.773689492611115e-07
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "7",
+      "n_focus": 190,
+      "n_flag_in_focus": 75,
+      "odds_ratio": 2.069017938583156,
+      "p": 9.800101579356435e-06,
+      "q": 2.1233553421938947e-05
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "intclust",
+      "level": "8",
+      "n_focus": 299,
+      "n_flag_in_focus": 141,
+      "odds_ratio": 3.2401924887540536,
+      "p": 8.219051210057777e-19,
+      "q": 5.342383286537555e-18
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "label_family": "PAM50",
+      "level": "Claudin-low",
+      "n_focus": 218,
+      "n_flag_in_focus": 13,
+      "odds_ratio": 0.1638427078148332,
+      "p": 4.1197426530580734e-15,
+      "q": 1.6000966862268194e-14
+    }
+  ],
+  "program_hits": [
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "estrogen",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": 0.088147222995758,
+      "p": 7.890853958699833e-05,
+      "q": 0.0001972713489674,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "her2",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.1845529079437255,
+      "p": 1.8030943780256507e-05,
+      "q": 9.015471890128252e-05,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "proliferation",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.1286671310663223,
+      "p": 0.0020836896286368,
+      "q": 0.0034728160477281,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "metabric",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "claudin",
+      "kind": "program",
+      "n_mixed": 410,
+      "n_single": 599,
+      "delta_mixed_minus_single": -0.0978664979338646,
+      "p": 0.0369355258302406,
+      "q": 0.0461694072878008,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    }
+  ],
+  "scanb_program_hits": [
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "estrogen",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": 0.081103429198265,
+      "p": 0.0041186116179475,
+      "q": 0.0051482645224343,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "her2",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": -0.5142054557800293,
+      "p": 3.409737155651975e-21,
+      "q": 1.7048685778259872e-20,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "proliferation",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": 0.1648172736167907,
+      "p": 2.038661476716642e-05,
+      "q": 5.096653691791605e-05,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    },
+    {
+      "cohort": "gse96058",
+      "engine": "bigclam",
+      "hard_cluster": 0,
+      "feature": "claudin",
+      "kind": "program",
+      "n_mixed": 573,
+      "n_single": 1075,
+      "delta_mixed_minus_single": -0.1684814989566803,
+      "p": 0.0001212000158728,
+      "q": 0.0002020000264547,
+      "n_genes_q_lt_0.05": NaN,
+      "n_genes_tested": NaN
+    }
+  ],
+  "synthetic_mean": [
+    {
+      "engine": "bigclam",
+      "F_correlation": 0.5314813290286249,
+      "mixed_ari": 0.09879475718963449
+    },
+    {
+      "engine": "nocd_graph",
+      "F_correlation": 0.10321593283382663,
+      "mixed_ari": 0.005990088036210476
+    },
+    {
+      "engine": "slpa",
+      "F_correlation": 0.17021084911877055,
+      "mixed_ari": 0.00015790881342228765
+    }
+  ],
+  "view_luma_or": [
+    {
+      "view": "correlation",
+      "engine": "bigclam",
+      "luma_or": 0.9117351280266108
+    },
+    {
+      "view": "correlation",
+      "engine": "nocd_x",
+      "luma_or": 0.855501525553013
+    },
+    {
+      "view": "correlation",
+      "engine": "slpa",
+      "luma_or": 0.6499202188283565
+    },
+    {
+      "view": "euclidean",
+      "engine": "bigclam",
+      "luma_or": 1.3529735600886783
+    },
+    {
+      "view": "euclidean",
+      "engine": "nocd_x",
+      "luma_or": 0.8638569078947368
+    },
+    {
+      "view": "euclidean",
+      "engine": "slpa",
+      "luma_or": 0.5737130339539979
+    },
+    {
+      "view": "fused",
+      "engine": "bigclam",
+      "luma_or": 2.995828698553949
+    },
+    {
+      "view": "fused",
+      "engine": "nocd_x",
+      "luma_or": 0.9735870263326912
+    },
+    {
+      "view": "fused",
+      "engine": "slpa",
+      "luma_or": 0.4382104184804081
+    }
+  ],
+  "loss_rows": [
+    {
+      "experiment": "loss_ablation",
+      "engine": "bigclam",
+      "l1": 0.0,
+      "feature_mode": "graph",
+      "epochs": 80,
+      "mixed_fraction": 0.2742424242424242,
+      "median_peak_ratio": 0.1690701854791595,
+      "median_entropy": 0.5430885188797753,
+      "n_mixed": 543,
+      "luma_or": 2.995828698553949,
+      "luma_p": 4.6006177877660325e-26,
+      "residual_p": 0.5627091832022699,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "bigclam",
+      "l1": 0.001,
+      "feature_mode": "graph",
+      "epochs": 80,
+      "mixed_fraction": 0.2742424242424242,
+      "median_peak_ratio": 0.1690680228251042,
+      "median_entropy": 0.543080483690718,
+      "n_mixed": 543,
+      "luma_or": 2.995828698553949,
+      "luma_p": 4.6006177877660325e-26,
+      "residual_p": 0.5627091832022699,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "bigclam",
+      "l1": 0.01,
+      "feature_mode": "graph",
+      "epochs": 80,
+      "mixed_fraction": 0.2742424242424242,
+      "median_peak_ratio": 0.1690483844063064,
+      "median_entropy": 0.5430121962197079,
+      "n_mixed": 543,
+      "luma_or": 2.995828698553949,
+      "luma_p": 4.6006177877660325e-26,
+      "residual_p": 0.5627091832022699,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "bigclam",
+      "l1": 0.1,
+      "feature_mode": "graph",
+      "epochs": 80,
+      "mixed_fraction": 0.2742424242424242,
+      "median_peak_ratio": 0.1688496631360608,
+      "median_entropy": 0.542326699635908,
+      "n_mixed": 543,
+      "luma_or": 2.995828698553949,
+      "luma_p": 4.6006177877660325e-26,
+      "residual_p": 0.5627091832022699,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "nocd_x",
+      "l1": NaN,
+      "feature_mode": "attributes",
+      "epochs": 40,
+      "mixed_fraction": 0.2303030303030303,
+      "median_peak_ratio": 0.2360729309471587,
+      "median_entropy": 0.542431712594266,
+      "n_mixed": 456,
+      "luma_or": 0.8301014828490457,
+      "luma_p": 0.1049459125184767,
+      "residual_p": 0.1688759385680587,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "nocd_x",
+      "l1": NaN,
+      "feature_mode": "attributes",
+      "epochs": 60,
+      "mixed_fraction": 0.2631313131313131,
+      "median_peak_ratio": 0.335821630360409,
+      "median_entropy": 0.6412033198727485,
+      "n_mixed": 521,
+      "luma_or": 0.9735870263326912,
+      "luma_p": 0.8306030049531389,
+      "residual_p": 0.5144268282951416,
+      "residual_n": 1979,
+      "residual_q": 0.6564940470693149
+    },
+    {
+      "experiment": "loss_ablation",
+      "engine": "nocd_g",
+      "l1": NaN,
+      "feature_mode": "graph",
+      "epochs": 60,
+      "mixed_fraction": 0.4126262626262626,
+      "median_peak_ratio": 0.8765842570345612,
+      "median_entropy": 1.5763033047513213,
+      "n_mixed": 817,
+      "luma_or": 1.5408305871391843,
+      "luma_p": 6.927500360477434e-06,
+      "residual_p": 0.8072266040209096,
+      "residual_n": 1979,
+      "residual_q": 0.8072266040209096
+    }
+  ]
+}
